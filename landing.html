@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel=" web icon" href="website star.png" />
+</head>
+
+    <body>
+        <div class="navbar">
+            <div class="nav-left">
+                <a href="index.html"><img src="website star.png" style="width: 50px; height: 50px;"></a>
+            </div> 
+            <div class="nav-right">
+                <a href="https://github.com/tsthuti" target="_blank" rel="noreferrer noopener">projects</a>
+                <a href="experience.html">experience</a>
+                <a href="landing.html">about</a>
+                <a href="index.html">home</a> 
+            </div>    
+        </div>
+
+        <div class="content" id="scroll-content">
+            <p style="padding: 10px; font-size: larger;">by day, i’m a <a href="experience.html"><b><i>first-year student</i></b></a> @ the university of waterloo working towards a bachelor in computer science + finance.</p>
+            <p style="padding: 10px; font-size: larger;">by night, i am batman (true story), and someone who loves <a href="https://github.com/tsthuti"><b><i>developing</i></b></a> innovative solutions to complex problems.</p>
+            <p style="padding: 10px; font-size: large;">aside from fighting crime, i love listening to music, going to the gym and playing my guitar.</p>
+            <p style="padding-left: 10px; padding-top: 20px; font-size: larger;">let’s <span class="connect"><b><i>connect!</i></b>
+                <span class="icons">
+                    <a href="https://www.linkedin.com/in/tanisha-gottemukula-656b64238/"><img src="linkedin.png" alt="linkedin-logo" style="width:30px; height:30px;"></a><br>
+                    <a href="https://github.com/tsthuti"><img src="github.png" alt="github-logo" style="width:30px; height:30px;"></a><br>
+                    <a href="mailto:tsgottem@uwaterloo.ca"><img src="email.png" alt="email-logo" style="width:30px; height:30px;"></a>
+                </span>
+            </span></p>
+        </div>
+        <script>
+            window.addEventListener('scroll', function() {
+                var content = document.getElementById('scroll-content');
+                var position = content.getBoundingClientRect().top;
+                var screenPosition = window.innerHeight / 1.3;
+                if (position < screenPosition) {
+                    content.classList.add('visible');
+                }
+            });
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                const content = document.querySelector('.content');
+                content.classList.add('visible');
+            });
+
+            document.querySelector('.connect').addEventListener('mouseenter', function() {
+                requestAnimationFrame(() => {
+                document.querySelector('.icons').classList.add('show');});
+            });
+        </script>
+    </body>
+</html>

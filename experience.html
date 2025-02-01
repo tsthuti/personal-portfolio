@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>my experience</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel=" web icon" href="website star.png" />
+    </head>
+
+    <body>
+        <script src="script.js"></script>
+        <div class="navbar">
+            <div class="nav-left">
+                <a href="index.html"><img src="website star.png" style="width: 50px; height: 50px;"></a>
+            </div> 
+            <div class="nav-right">
+                <a href="https://github.com/tsthuti" target="_blank" rel="noreferrer noopener">projects</a>
+                <a href="experience.html">experience</a>
+                <a href="landing.html">about</a>
+                <a href="index.html">home</a> 
+            </div>    
+        </div>
+
+        <div class="experience" id="scroll-experience">
+            <div class="header-exp">
+                <p style="font-family: Pinyon Script; font-size: xx-large;">experience</p>
+            </div>
+
+            <div class="experience-card" onclick="toggleDetails(this)">
+                <div class="card-header">
+                    <h3>event coordinator — UW/UX</h3>
+                    <p class="exp-date" style="font-size: x-small;">waterloo, ON | dec 2024 – present</p>
+                </div>
+                <ul class="details">
+                    <p>hosting impactful, amazing events for students passionate about UI/UX.</p>
+                </ul>
+            </div>
+
+            <div class="experience-card" onclick="toggleDetails(this)">
+                <div class="card-header">
+                    <h3>junior representative — UW Fintech</h3>
+                    <p class="exp-date" style="font-size: x-small;">waterloo, ON | sept 2025 – present</p>
+                </div>
+                <ul class="details">
+                    <p>organizing fintech-related events to educate and empower students.</p>
+                </ul>
+            </div>
+
+            <div class="experience-card" onclick="toggleDetails(this)">
+                <div class="card-header">
+                    <h3>president — Relay for Life</h3>
+                    <p class="exp-date" style="font-size: x-small;">brampton, ON | sept 2021 – june 2024</p>
+                </div>
+                <ul class="details">
+                    <p>led 50+ students, raising $10,000+ for Cancer Research.</p>
+                </ul>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var content = document.getElementById('scroll-experience');
+                if (content) {
+                    // Add a small delay to ensure the animation is noticeable
+                    setTimeout(function() {
+                        content.classList.add('visible');
+                        console.log('Added visible class');
+                    }, 100);
+                } else {
+                    console.log('Element not found');
+                }
+            });
+        </script>
+    </body>
+</html>
+
