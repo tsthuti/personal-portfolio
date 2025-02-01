@@ -35,12 +35,15 @@
             </span></p>
         </div>
         <script>
-            window.addEventListener('scroll', function() {
+            document.addEventListener('DOMContentLoaded', function() {
                 var content = document.getElementById('scroll-content');
-                var position = content.getBoundingClientRect().top;
-                var screenPosition = window.innerHeight / 1.3;
-                if (position < screenPosition) {
-                    content.classList.add('visible');
+                if (content) {
+                    setTimeout(function() {
+                        content.classList.add('visible');
+                        console.log('Added visible class');
+                    }, 100);
+                } else {
+                    console.log('Element not found');
                 }
             });
         
