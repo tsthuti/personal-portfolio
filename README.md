@@ -1,3 +1,5 @@
-this is my personal portfolio website! 
+# my personal portfolio! 🌌
 
-last updated: feb 1st, 2025.
+check out my most recent webpage build; an updated personal portfolio! 
+
+last updated: february 1st, 2025
