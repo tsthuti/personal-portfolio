@@ -35,17 +35,27 @@
             </span></p>
         </div>
         <script>
-            document.addEventListener("scroll", function() {
-                var content = document.getElementById('scroll-content');
+            // document.addEventListener("scroll", function() {
+            //     var content = document.getElementById('scroll-content');
+            //     if (content) {
+            //         setTimeout(function() {
+            //             content.classList.add('visible');
+            //             console.log('Added visible class');
+            //         }, 100);
+            //     } else {
+            //         console.log('Element not found');
+            //     }
+            // });
+
+            document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const content = document.querySelector('.content');
                 if (content) {
-                    setTimeout(function() {
-                        content.classList.add('visible');
-                        console.log('Added visible class');
-                    }, 100);
-                } else {
-                    console.log('Element not found');
-                }
+                    content.classList.add('visible');
+                    console.log('Added visible class');
+                }}, 100); 
             });
+
         
             document.addEventListener('DOMContentLoaded', function() {
                 const content = document.querySelector('.content');
