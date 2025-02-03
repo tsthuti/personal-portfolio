@@ -60,6 +60,13 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .hero-container {
   max-width: 100%;
