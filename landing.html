@@ -35,25 +35,63 @@
             </span></p>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const content = document.querySelector('.content');
-                if (content) {
-                    content.classList.add('visible');
-                    console.log('Added visible class');
-                }}, 100); 
-            });
+            // document.addEventListener('DOMContentLoaded', function() {
+            // setTimeout(() => {
+            //     const content = document.querySelector('.content');
+            //     if (content) {
+            //         content.classList.add('visible');
+            //         console.log('Added visible class');
+            //     }}, 100); 
+            // });
 
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(() => {
+                    const content = document.querySelector('.content');
+                    if (content) {
+                        content.classList.add('visible');
+                        console.log('Added visible class on page load');
+                    } else {
+                        console.log('Element not found on page load');
+                    }
+                }, 100);
+            });
+            
+            document.addEventListener("scroll", function() {
+                const content = document.getElementById('scroll-content');
+                if (content && !content.classList.contains('visible')) {
+                    setTimeout(function() {
+                        content.classList.add('visible');
+                        console.log('Added visible class on scroll');
+                    }, 100);
+                }
+            });
+            
+            // Ensure hover effect on "connect"
+            document.addEventListener('DOMContentLoaded', function() {
+                const connectElement = document.querySelector('.connect');
+                const iconsElement = document.querySelector('.icons');
+            
+                if (connectElement && iconsElement) {
+                    connectElement.addEventListener('mouseenter', function() {
+                        requestAnimationFrame(() => {
+                            iconsElement.classList.add('show');
+                            console.log('Icons animation triggered');
+                        });
+                    });
+                } else {
+                    console.log('Connect or icons element not found');
+                }
+            });
         
-            document.addEventListener('DOMContentLoaded', function() {
-                const content = document.querySelector('.content');
-                content.classList.add('visible');
-            });
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     const content = document.querySelector('.content');
+            //     content.classList.add('visible');
+            // });
 
-            document.querySelector('.connect').addEventListener('mouseenter', function() {
-                requestAnimationFrame(() => {
-                document.querySelector('.icons').classList.add('show');});
-            });
+            // document.querySelector('.connect').addEventListener('mouseenter', function() {
+            //     requestAnimationFrame(() => {
+            //     document.querySelector('.icons').classList.add('show');});
+            // });
         </script>
     </body>
 </html>
