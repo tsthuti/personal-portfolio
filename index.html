@@ -11,7 +11,7 @@
 
     <body>
         <section class="hero">
-            <div class="hero-container">
+            <div class="hero-container" id="scroll-hero">
                 <div class="column-left">
                     <a href="landing.html"><img src="website logo.png" alt="logo-image" class="logo"
                         style="width: 900px; height: 900px;"></a>
@@ -20,7 +20,17 @@
         </section>
 
         <script>
-            // add js to animate logo
+            document.addEventListener('DOMContentLoaded', function() {
+                var content = document.getElementById('scroll-hero');
+                if (content) {
+                    setTimeout(function() {
+                        content.classList.add('visible');
+                        console.log('added visible class');
+                    }, 100);
+                } else {
+                    console.log('element not found');
+                }
+            });
         </script>
     </body>
 </html>
