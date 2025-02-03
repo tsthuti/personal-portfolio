@@ -21,14 +21,27 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                var content = document.getElementById('scroll-hero');
+                const content = document.getElementById('scroll-hero');
                 if (content) {
-                    setTimeout(function() {
+                    content.classList.remove('visible');
+                    void content.offsetWidth;
+                    // retrigger animation
+                    setTimeout(() => {
                         content.classList.add('visible');
-                        console.log('added visible class');
-                    }, 100);
-                } else {
-                    console.log('element not found');
+                        console.log('animation triggered');
+                    }, 50);
+                }
+            });
+
+            // again bfcache issue
+            window.addEventListener("pageshow", function() {
+                const content = document.getElementById('scroll-hero');
+                if (content) {
+                    content.classList.remove('visible');
+                    void content.offsetWidth; 
+                    setTimeout(() => {
+                        content.classList.add('visible');
+                    }, 50);
                 }
             });
         </script>
